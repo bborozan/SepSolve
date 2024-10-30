@@ -1,8 +1,8 @@
 import numpy as np
-import scipy.io
 import gurobipy as gp
 from gurobipy import GRB
 import scipy.sparse as sp
+import pandas
 
 class MarkerGeneLPSolver:
     def __init_vars(self):
@@ -36,7 +36,6 @@ class MarkerGeneLPSolver:
         self.__init_vars()
 
         self.__data = data
-        self.__labels = labels
         self.__num_markers = num_markers
         self.__s_squared = s * s
         self.__method = method
@@ -44,10 +43,11 @@ class MarkerGeneLPSolver:
         self.__num_cells, self.__num_genes = data.shape
         self.__k = k
         self.__ilp = ilp
+        self.__labels = labels
 
         # compute label to indices dict
-        for i in range(len(labels)):
-            label = labels.iloc[i]
+        for i in range(len(self.__labels)):
+            label = self.__labels[i]
             if label not in self.__idx:
                 self.__idx[label] = []
             self.__idx[label].append(i)
@@ -335,6 +335,11 @@ def __get_markers__internal(data, labels, num_markers, s=0.4, k=0.5, weighted=Fa
     x = solver.ranking(x)
     return x
 
-# wrapper
+def __process_labels(labels):
+    # update labels
+    if isinstance(labels, pandas.core.series.Series):
+        return labels.astype('category').astype("category").cat.codes.to_numpy()
+        
 def get_markers(data, labels, num_markers, c=0.4, ilp=False):
-    return __get_markers__internal(data, labels, num_markers, s=c, ilp=ilp)
+    lab = __process_labels(labels)
+    return __get_markers__internal(data, lab, num_markers, s=c, ilp=ilp)
