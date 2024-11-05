@@ -16,4 +16,4 @@ Basic Example
     # get 25 marker genes
     data = adata.X
     labels = adata.obs["paul15_clusters"]
-    markers = sepsolve.get_markers(adata.X, labels, 25)
+    markers = sepsolve.get_markers(data, labels, 25)
