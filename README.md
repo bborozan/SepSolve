@@ -1,8 +1,17 @@
-# SepSolve
+# SepSolve: Optimal Marker Gene Selection via *c*-Separation
+
+**Paper:** *Optimal marker genes for c‑separated cell types*
+
+**Authors:** Bartol Borozan, Luka Borozan, Domagoj Ševerdija, Domagoj Matijević, Stefan Canzar
+ 
+
+---
 
 **SepSolve** is a combinatorial feature selection method for identifying optimal marker genes in single-cell RNA-seq data. Unlike traditional differential expression methods or greedy combinatorial approaches, SepSolve uses a linear programming (LP) framework to select a small set of genes that achieve *c-separation* between all cell types — ensuring robust discrimination that accounts for intra-cell-type variability.
 
 Link to preprint: [biorxiv](https://www.biorxiv.org/content/10.1101/2025.02.12.637849v1)
+
+Link to RECOMB 2025 submission: [Research in Computational Molecular Biology](https://link.springer.com/chapter/10.1007/978-3-031-90252-9_53)
 
 ---
 
@@ -54,3 +63,41 @@ sepsolve.get_markers(data, labels, n_markers, c=0.4)
 * `n_markers`: Number of marker genes to select
 * `c`: (Optional) Separation parameter, default `0.4`
 
+---
+
+## 📝 Citation
+
+If you find SepSolve helpful in your research, please cite
+
+```bibtex
+@article{Borozan2025SepSolve,
+  title   = {Optimal marker genes for c-separated cell types},
+  author  = {Borozan, Bartol and Borozan, Luka and \v{S}everdija, Domagoj and Matijevi\'c, Domagoj and Canzar, Stefan},
+  journal = {bioRxiv},
+  year    = {2025},
+  doi     = {10.1101/2025.02.12.637849}
+}
+```
+or
+```bibtex
+@InProceedings{10.1007/978-3-031-90252-9_53,
+  author="Borozan, Bartol and Borozan, Luka and {\v{S}}everdija, Domagoj and Matijevi{\'{c}}, Domagoj and Canzar, Stefan", 
+  editor="Sankararaman, Sriram",
+  title="Optimal Marker Genes for c-Separated Cell Types",
+  booktitle="Research in Computational Molecular Biology",
+  year="2025",
+  publisher="Springer Nature Switzerland",
+  address="Cham",
+  pages="424--427",
+  abstract="The identification of cell types in single-cell RNA-seq studies relies on the distinct expression signature of marker genes. A small set of target genes is also needed to design probes for targeted spatial transcriptomics experiments and to target proteins in single-cell spatial proteomics or for cell sorting. While traditional approaches have relied on testing one gene at a time for differential expression between a given cell type and the rest, more recent methods have highlighted the benefits of a joint selection of markers that together distinguish all pairs of cell types simultaneously. However, existing methods either impose constraints on all pairs of individual cells which becomes intractable even for medium-sized datasets, or ignore intra-cell type expression variation entirely by collapsing all cells of a given type to a single representative. Here we address these limitations and propose to find a small set of genes such that cell types are c-separated in the selected dimensions, a notion introduced previously in learning a mixture of Gaussians. To this end, we formulate a linear program that naturally takes into account expression variation within cell types without including each pair of individual cells in the model, leading to a highly stable set of marker genes that allow to accurately discriminate between cell types and that can be computed to optimality efficiently.",
+  isbn="978-3-031-90252-9"
+}
+```
+
+---
+
+## 📜 License
+
+This project is released under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+
+---
