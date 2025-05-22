@@ -10,8 +10,8 @@ Link to preprint: [biorxiv](https://www.biorxiv.org/content/10.1101/2025.02.12.6
 
 Two cell types are said to be *c-separated* in a gene subspace if the distance between their mean expression vectors exceeds a multiple (*c*) of their internal variance. SepSolve formalizes this in an optimisation problem that:
 
-* Accounts for within-type expression variability
-* Optimally balances separation between all type pairs
+* Accounts for expression variability
+* Balances separation between all type pairs
 * Yields highly stable and compact marker sets
 
 ---
