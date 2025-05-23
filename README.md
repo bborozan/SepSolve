@@ -25,6 +25,20 @@ Two cell types are said to be *c-separated* in a gene subspace if the distance b
 
 ---
 
+## 🔧 Installation
+
+SepSolve is pure‑Python (≥3.9) and only depends on `numpy`, `scipy`, and the commercial (free academic) solver **Gurobi**.
+
+```bash
+# pip install sepsolve # from PyPI – coming soon ✨
+# or clone the repo
+pip install -e .
+```
+
+> **Note:** Gurobi ≥10.0 must be available on your system. Follow the [Gurobi quick‑start](https://www.gurobi.com/documentation/) to obtain an academic licence.
+
+---
+
 ## 🧬 Quick Start
 
 Here's a minimal example using the `paul15` dataset from `scanpy`:
