@@ -31,6 +31,10 @@ SepSolve is pure‑Python (≥3.9) and only depends on `numpy`, `scipy`, and the
 
 ```bash
 # pip install sepsolve # from PyPI – coming soon ✨
+
+# install from git
+pip install git+https://github.com/bborozan/SepSolve
+
 # or clone the repo
 pip install -e .
 ```
