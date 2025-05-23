@@ -45,6 +45,7 @@ Here's a minimal example using the `paul15` dataset from `scanpy`:
 
 ```python
 import scanpy as sc
+import sepsolve
 
 # Load dataset
 adata = sc.datasets.paul15()
