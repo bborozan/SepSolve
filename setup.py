@@ -1,9 +1,8 @@
 from setuptools import setup
-from sepsolve import __version__
 
 setup_info = dict(
     name="sepsolve",
-    version=__version__,
+    version="0.1.0",
     description="Marker gene selection module",
     license="MIT",
 
