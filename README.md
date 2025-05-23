@@ -69,13 +69,14 @@ print("Selected marker indices:", markers)
 ## ⚙️ API
 
 ```python
-sepsolve.get_markers(data, labels, n_markers, c=0.4)
+sepsolve.get_markers(data, labels, num_markers, c=0.4, ilp=False)
 ```
 
 * `data`: Preprocessed gene expression matrix (cells × genes)
 * `labels`: Cluster or cell type annotations
-* `n_markers`: Number of marker genes to select
+* `num_markers`: Number of marker genes to select
 * `c`: (Optional) Separation parameter, default `0.4`
+* `ilp`: (Optional) Use integer linear programming (ILP) instead of a faster LP relaxation
 
 ---
 
