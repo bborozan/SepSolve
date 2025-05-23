@@ -21,6 +21,27 @@ def __process_labels(labels):
         return np.array(categorical.codes)
         
 def get_markers(data, labels, num_markers, c=0.4, ilp=False):
+    """Return indices of `num_markers` marker genes providing *c*-separation.
+
+    Parameters
+    ----------
+    data        : ndarray, shape (cells, genes)
+        Pre‑processed expression matrix.
+    labels      : array‑like, shape (cells,)
+        Integer or string cell‑type annotations.
+    num_markers : int
+        Number of markers to select.
+    c      : float, default 0.4
+        Separation strictness. Larger → stricter.
+    ilp : bool, default False
+        Use ILP solver if True; otherwise, use LP relaxation (faster, approximate).
+
+    Returns
+    -------
+    list of int
+        Indices of selected marker genes.
+    """
+
     if data.size == 0:
         raise ValueError(f"Data size is zero.")
     
@@ -31,9 +52,6 @@ def get_markers(data, labels, num_markers, c=0.4, ilp=False):
     if len(lab) != data.shape[0]:
         # check if data has to be transposed
         # we want cells as rows and genes as columns
-        if len(lab) == data.shape[1]:
-            data = data.T
-        else:
-            raise ValueError(f"Label vector has length {len(lab)}, while the data matrix is of shape {data.shape}.")
+        raise ValueError(f"Label vector has length {len(lab)}, while the data matrix is of shape {data.shape}.")
     
     return __get_markers__internal(data, lab, num_markers, s=c, ilp=ilp)
