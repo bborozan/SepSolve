@@ -13,7 +13,7 @@ setup_info = dict(
     author_email="bborozan@mathos.hr",
     url="https://github.com/bborozan/SepSolve",
     packages=["sepsolve"], 
-    install_requires=["gurobipy", "pandas", "scipy", "numpy"],
+    install_requires=["wheel", "gurobipy", "pandas", "scipy", "numpy"],
 )
 
 setup(**setup_info)
