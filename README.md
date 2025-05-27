@@ -30,7 +30,7 @@ Two cell types are said to be *c-separated* in a gene subspace if the distance b
 SepSolve is pure‑Python (≥3.9) and only depends on `numpy`, `scipy`, and the commercial (free academic) solver **Gurobi**.
 
 ```bash
-# pip install sepsolve # from PyPI – coming soon ✨
+pip install sepsolve # from PyPI
 
 # install from git
 pip install git+https://github.com/bborozan/SepSolve
