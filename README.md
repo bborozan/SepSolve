@@ -83,10 +83,10 @@ sepsolve.get_markers(data, labels, num_markers, c=0.4, ilp=False)
 * `c`: (Optional) Separation parameter, default `0.4`
 * `ilp`: (Optional) Use integer linear programming (ILP) instead of a faster LP relaxation
 
-**(Coming soon)**
 ```python
 sepsolve.optimize_c(data, labels)
 ```
+* **(Coming soon)**
 
 ---
 
