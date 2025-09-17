@@ -76,17 +76,26 @@ print("Selected marker indices:", markers)
 ```python
 sepsolve.get_markers(data, labels, num_markers, c=0.4, ilp=False)
 ```
+Selects marker genes from the provided gene expression data based on the specified separation parameter `c` and the number of markers to select.
 
+**Parameters:**
 * `data`: Preprocessed gene expression matrix (cells × genes)
 * `labels`: Cluster or cell type annotations
 * `num_markers`: Number of marker genes to select
 * `c`: (Optional) Separation parameter, default `0.4`
 * `ilp`: (Optional) Use integer linear programming (ILP) instead of a faster LP relaxation
 
+<br />
+
 ```python
 sepsolve.optimize_c(data, labels)
 ```
-* **(Coming soon)**
+**(Coming soon)**
+Optimizes the separation parameter `c` by evaluating different values based on the provided data and labels, selecting the one that provides the best cluster separation.
+
+**Parameters:**
+* `data`: Preprocessed gene expression matrix (cells × genes)
+* `labels`: Cluster or cell type annotations
 
 ---
 
