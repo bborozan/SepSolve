@@ -85,17 +85,28 @@ Selects marker genes from the provided gene expression data based on the specifi
 * `c`: (Optional) Separation parameter, default `0.4`
 * `ilp`: (Optional) Use integer linear programming (ILP) instead of a faster LP relaxation
 
+**Returns:**
+Indices (list of int) of selected marker genes
+
 <br />
 
+
 ```python
-sepsolve.optimize_c(data, labels)
+sepsolve.optimize_c(data, labels, num_markers, start=0.2, end=1.0, step_size=0.025, verbose=False)
 ```
-**(Coming soon)**
-Optimizes the separation parameter `c` by evaluating different values based on the provided data and labels, selecting the one that provides the best cluster separation.
+Optimizes the separation parameter `c` by searching over a given range and selecting the value that yields the best separation between clusters.
 
 **Parameters:**
 * `data`: Preprocessed gene expression matrix (cells × genes)
 * `labels`: Cluster or cell type annotations
+* `num_markers`: Number of marker genes to select
+* `start`: (Optional) Starting value of `c`, default `0.2`
+* `end`: (Optional) Ending value of `c`, default `1.0`
+* `step_size`: (Optional) Step size for scanning the range, default `0.025`
+* `verbose`: (Optional) Prints progress if set to `True`, default `False`
+
+**Returns:**
+The optimal `c` value (float) that maximizes separation performance
 
 ---
 
