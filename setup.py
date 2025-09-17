@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup_info = dict(
     name="sepsolve",
-    version="0.1.0",
+    version="0.1.1",
     description="Marker gene selection module",
     license="MIT",
 
@@ -13,7 +13,7 @@ setup_info = dict(
     author_email="bborozan@mathos.hr",
     url="https://github.com/bborozan/SepSolve",
     packages=["sepsolve"], 
-    install_requires=["gurobipy", "pandas", "scipy", "numpy"],
+    install_requires=["gurobipy", "pandas", "scipy", "numpy", "scikit-learn"],
 )
 
 setup(**setup_info)
