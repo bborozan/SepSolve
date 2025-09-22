@@ -118,9 +118,9 @@ If you find SepSolve helpful in your research, please cite
 @article{Borozan2025SepSolve,
   title   = {Optimal marker genes for c-separated cell types},
   author  = {Borozan, Bartol and Borozan, Luka and \v{S}everdija, Domagoj and Matijevi\'c, Domagoj and Canzar, Stefan},
-  journal = {bioRxiv},
+  journal = {Genome Research},
   year    = {2025},
-  doi     = {10.1101/2025.02.12.637849}
+  doi     = {10.1101/gr.280637.125}
 }
 ```
 or
