@@ -11,7 +11,7 @@
 
 Link to preprint: [biorxiv](https://www.biorxiv.org/content/10.1101/2025.02.12.637849v1)
 
-Link to RECOMB 2025 submission: [Research in Computational Molecular Biology](https://link.springer.com/chapter/10.1007/978-3-031-90252-9_53)
+Link to RECOMB 2025 conference paper: [Research in Computational Molecular Biology](https://link.springer.com/chapter/10.1007/978-3-031-90252-9_53)
 
 ---
 
